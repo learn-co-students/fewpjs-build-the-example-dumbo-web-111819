@@ -3,6 +3,9 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+const errorMessage = document.getElementById('modal')
+errorMessage.className = "hidden"
+
 
 
 
