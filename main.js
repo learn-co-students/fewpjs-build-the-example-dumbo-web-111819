@@ -4,8 +4,23 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+const likeButton = document.querySelector(".like")
 
-
+likeButton.addEventListener("click", (e) => {
+  mimicServerCall()
+  .then(function(){
+    if (e.target.innerText === EMPTY_HEART) {
+      e.target.innerText = FULL_HEART
+      e.target.style.color = "red"
+    } else if (e.target.innerText === FULL_HEART) {
+      e.target.innerText = EMPTY_HEART
+      e.target.style.color = ""
+    }
+  })
+  .catch(function(){
+    document.getElementById("modal").className = ""
+  })
+})
 
 //------------------------------------------------------------------------------
 // Don't change the code below: this function mocks the server response
